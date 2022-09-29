@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  color: #24292f;
+  font-style: normal;
+}
+
+nav ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.date {
+  display: flex;
+  justify-content: end;
+  width: 98%;
+  padding-top: 5px;
+  height: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  border: 2px solid black;
+  width: 98%;
+  padding-left: 5%;
+  margin: 0 auto;
+}
+
+.navbrand {
+  flex: 1;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 0.3;
+}
+
+.nav-items > li:nth-child(even) {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.nav-list {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 130px);
+  width: 100%;
+}
+
+#books-list {
+  width: 100%;
+}
+
+.show-books {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.book:nth-of-type(odd) {
+  background-color: rgba(201, 197, 197, 0.5);
+}
+
+#books {
+  border: 2px solid black;
+  width: 98%;
+}
+
+.title-and-author {
+  display: flex;
+  gap: 5px;
+}
+
+.remove_book-btn,
+.add-book-btn {
+  box-shadow: #000 0 5px 5px 0;
+  border: 2px solid #000;
+  padding: 2px;
+}
+
+.add-book-title {
+  padding-bottom: 5px;
+}
+
+.book-input-div {
+  width: 100%;
+}
+
+.add-book-input {
+  border: 3px solid #000;
+  padding: 8px;
+  width: 100%;
+}
+
+#add-books {
+  display: none;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+}
+
+#add-book-form {
+  width: 50%;
+}
+
+.add-book-btn {
+  float: right;
+  padding: 2px 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.remove_book-btn__container {
+  margin-right: 10px;
+}
+
+.contact-details {
+  padding-left: 25px;
+}
+
+.active {
+  color: blue !important;
+}
+
+.black {
+  color: #000;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 50px;
+  border: 2px solid black;
+  width: 98%;
+  padding-left: 5%;
+}
