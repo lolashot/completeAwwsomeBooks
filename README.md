@@ -18,6 +18,9 @@ To get a local copy up and running follow these simple example steps.
 
 Clone this repo using this URL (link) or download it as a ZIP format from the green button above under the text Code.
 
+-npm install 
+-npm run dev
+
 Usage: inside the project folder looks for the index.html file and open it using your preferred web browser.
 
 ### Deployment
