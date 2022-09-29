@@ -65,7 +65,6 @@ a {
   padding: 0 10px;
 }
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -157,9 +156,9 @@ main {
   margin-right: 10px;
 }
 
- .contact-details {
+.contact-details {
   padding-left: 25px;
-} 
+}
 
 .active {
   color: blue !important;
@@ -177,5 +176,4 @@ main {
   border: 2px solid black;
   width: 98%;
   padding-left: 5%;
-  margin: 0 auto;
 }

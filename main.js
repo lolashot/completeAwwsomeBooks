@@ -3,32 +3,28 @@ class allBooks {
     this.id = id;
     this.title = title;
     this.author = author;
-  }
-    
+  }   
   static getBooks() {
     return JSON.parse(localStorage.getItem('books'))
-    ? JSON.parse(localStorage.getItem('books'))
-    : [];
+      ? JSON.parse(localStorage.getItem('books'))
+      : [];
   }
-  
   static getBook() {
     const books = allBooks.getBooks();
     const booksCount = books.length;
     const lastBook = booksCount - 1;
     const AddedBook = books[lastBook]?.id
-    ? books[lastBook].id
-    : 0;
-  
+      ? books[lastBook].id
+      : 0;
     return AddedBook + 1;
   }
-  
   static displayBooks() {
     const booksStore = document.querySelector('.books-list');
     const bookData = allBooks.getBooks();
     if (bookData.length) {
       const listOfBooks = bookData
-      .map(
-      (book) => `<div id="book_id" class="book">
+        .map(
+          (book) => `<div id="book_id" class="book">
         <div class="title-and-author">
         <div class="book-title">${book.title} by</div>
         <div class="book-author">${book.author}</div>
