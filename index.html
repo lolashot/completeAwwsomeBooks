@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+      <nav class="container">
+        <div class="nav-brand">Awesome Books</div>
+        <ul class="nav-items">
+          <li class="nav-item"><a class="nav__item active" onclick="toggleSection('books-list')" href="javascript:void(0)"> List </a></li>
+          <li class="nav-item"><a class="nav__item" onclick="toggleSection('add-books')" href="javascript:void(0)">Add new </a></li>
+          <li class="nav-item"><a class="nav__item" onclick="toggleSection('contact')" href="javascript:void(0)">Contact</a></li>
+        </ul>
+      </nav>
+    <div class="date">
+      <p>March 9th 2021, 9:25:32 am</p>
+    </div>
+    <main class="">
+      <section class="" id="">
+        <br><br>
+        <h1 class="">All Awesome Books</h1>
+        <br /><br />
+        <div class="show-books">
+          <div id="" class="show-book books-list"></div>
+        </div>
+      </section>
+      <section id="add-books" class="">
+        <br><br>
+        <h1 class="add-books-title">Add a new book</h1>
+        <br><br>
+        <form class="" id="form">
+            <div class="form-div">
+              <input type="text" class="" placeholder="Title" name="" id="titleInput">
+              <div id="msg"></div>
+              <br/>
+              <input type="text" class="" name="" placeholder="Author" id="authorInput">
+            </div>
+            <br/>
+              <button type="submit" id="add" class="btn">Add</button>
+          </form>
+      </section>
+       <section class="" id="">
+        <br><br>
+        <h1 class="">Contact Information</h1>
+        <br><br>
+        <p class="">
+          Do you have any questions or you just want to say "Hello"? <br> You can reach out to us.
+        </p>
+        <br>
+        <ul class="">
+          <li class="">Our e-mail: mail@gmail.com</li>
+          <li class="">Our phone number: 254117923438221</li>
+          <li class="">Our address: Streetname 22 84503 City, Country</li>
+        </ul>
+      </section>
+    </main>
+    <br><br>
+    <footer class="footer"><p>Copyright &copy;Awesome Books</p></footer>
+    <script src="./main.js"></script>
+  </body>
+</html>
