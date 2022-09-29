@@ -25,13 +25,13 @@ Usage: inside the project folder looks for the index.html file and open it using
 
 ## Authors
 
-👤 **Author1**
-
-- GitHub: [@NurkaAmre](https://github.com/NurkaAmre)
-
 👤 **Author2**
 
 - GitHub: [@lolashot](https://github.com/lolashot)
+
+👤 **Author1**
+
+- GitHub: [@NurkaAmre](https://github.com/NurkaAmre)
 
 
 ## 🤝 Contributing
