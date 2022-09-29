@@ -1,4 +1,4 @@
-class allBooks {
+class AllBooks {
   constructor(id, title, author) {
     this.id = id;
     this.title = title;
@@ -12,7 +12,7 @@ class allBooks {
   }
 
   static getBook() {
-    const books = allBooks.getBooks();
+    const books = AllBooks.getBooks();
     const booksCount = books.length;
     const lastBook = booksCount - 1;
     const AddedBook = books[lastBook]?.id
@@ -23,7 +23,7 @@ class allBooks {
 
   static displayBooks() {
     const booksStore = document.querySelector('.books-list');
-    const bookData = allBooks.getBooks();
+    const bookData = AllBooks.getBooks();
     if (bookData.length) {
       const listOfBooks = bookData
         .map(
@@ -34,7 +34,7 @@ class allBooks {
         </div>
         <br />
         <div class="remove_book-btn__container">
-        <button onclick="allBooks.removeBook(${book.id});" class="remove_book-btn">Remove</button>
+        <button onclick="AllBooks.removeBook(${book.id});" class="remove_book-btn">Remove</button>
         </div>
         </div><hr>`,
         )
@@ -45,69 +45,68 @@ class allBooks {
     }
   }
 
-    static localStorage(a, b) {
-      localStorage.setItem(a, JSON.stringify(b));
-      allBooks.displayBooks();
-    }
-  
-    static addBook(bookItem) {
-      const bookData = allBooks.getBooks();
-      bookData.push(bookItem);
-      allBooks.localStorage('books', bookData);
-    }
-  
-    static removeBook(id) {
-      const bookData = allBooks.getBooks();
-      const filteredBooks = bookData.filter((item) => item.id !== id);
-  
-      allBooks.localStorage('books', filteredBooks);
-    }
+  static localStorage(a, b) {
+    localStorage.setItem(a, JSON.stringify(b));
+    AllBooks.displayBooks();
   }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    allBooks.displayBooks();
+
+  static addBook(bookItem) {
+    const bookData = AllBooks.getBooks();
+    bookData.push(bookItem);
+    AllBooks.localStorage('books', bookData);
+  }
+
+  static removeBook(id) {
+    const bookData = AllBooks.getBooks();
+    const filteredBooks = bookData.filter((item) => item.id !== id);
+
+    AllBooks.localStorage('books', filteredBooks);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  AllBooks.displayBooks();
+});
+
+document.getElementById('add-book-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const bookId = AllBooks.getBook();
+  const bookObject = new AllBooks(
+    bookId,
+    document.getElementById('title').value,
+    document.getElementById('author').value,
+  );
+  AllBooks.addBook(bookObject);
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+});
+
+const navItems = document.getElementsByClassName('nav-item');
+for (let i = 0; i < navItems.length; i += 1) {
+  navItems[i].addEventListener('click', function () {
+    const current = document.getElementsByClassName('active');
+    current[0].className = current[0]?.className?.replace(' active', '');
+    this.className += ' active';
   });
-  
-  document.getElementById('add-book-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-  
-    const bookId = allBooks.getBook();
-    const bookObject = new allBooks(
-      bookId,
-      document.getElementById('title').value,
-      document.getElementById('author').value,
-    );
-    allBooks.addBook(bookObject);
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
-  });
-  
-  const navItems = document.getElementsByClassName('nav-item');
-  for (let i = 0; i < navItems.length; i += 1) {
-    navItems[i].addEventListener('click', function () {
-      const current = document.getElementsByClassName('active');
-      current[0].className = current[0]?.className?.replace(' active', '');
-      this.className += ' active';
-    });
+}
+
+function toggleSection(domId) {
+  if (domId === 'books-list') {
+    document.getElementById('add-books').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+    document.getElementById('books-list').style.display = 'block';
   }
-  
-  function toggleSection(domId) {
-    if (domId === 'books-list') {
-      document.getElementById('add-books').style.display = 'none';
-      document.getElementById('contact').style.display = 'none';
-      document.getElementById('books-list').style.display = 'block';
-    }
-  
-    if (domId === 'add-books') {
-      document.getElementById('books-list').style.display = 'none';
-      document.getElementById('contact').style.display = 'none';
-      document.getElementById('add-books').style.display = 'flex';
-    }
-  
-    if (domId === 'contact') {
-      document.getElementById('books-list').style.display = 'none';
-      document.getElementById('add-books').style.display = 'none';
-      document.getElementById('contact').style.display = 'block';
-    }
+
+  if (domId === 'add-books') {
+    document.getElementById('books-list').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+    document.getElementById('add-books').style.display = 'flex';
   }
-  
+
+  if (domId === 'contact') {
+    document.getElementById('books-list').style.display = 'none';
+    document.getElementById('add-books').style.display = 'none';
+    document.getElementById('contact').style.display = 'block';
+  }
+}
