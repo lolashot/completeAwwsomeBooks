@@ -3,12 +3,14 @@ class allBooks {
     this.id = id;
     this.title = title;
     this.author = author;
-  }   
+  }
+
   static getBooks() {
     return JSON.parse(localStorage.getItem('books'))
       ? JSON.parse(localStorage.getItem('books'))
       : [];
   }
+
   static getBook() {
     const books = allBooks.getBooks();
     const booksCount = books.length;
@@ -18,6 +20,7 @@ class allBooks {
       : 0;
     return AddedBook + 1;
   }
+
   static displayBooks() {
     const booksStore = document.querySelector('.books-list');
     const bookData = allBooks.getBooks();
@@ -41,7 +44,7 @@ class allBooks {
       booksStore.innerHTML = ' <span class="text-center"><i> Please Add a Book</i></span>';
     }
   }
-  
+
     static localStorage(a, b) {
       localStorage.setItem(a, JSON.stringify(b));
       allBooks.displayBooks();
