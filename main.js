@@ -82,6 +82,14 @@ document.getElementById('add-book-form').addEventListener('submit', (e) => {
   document.getElementById('author').value = '';
 });
 
+const navItems = document.getElementsByClassName('nav-item');
+for (let i = 0; i < navItems.length; i += 1) {
+  navItems[i].addEventListener('click', function () {
+    const current = document.getElementsByClassName('active');
+    current[0].className = current[0]?.className?.replace(' active', '');
+    this.className += ' active';
+  });
+}
 
 function toggleSection(domId) {
   if (domId === 'books-list') {
@@ -101,14 +109,6 @@ function toggleSection(domId) {
     document.getElementById('add-books').style.display = 'none';
     document.getElementById('contact').style.display = 'block';
   }
-}
-const navItems = document.getElementsByClassName('nav-item');
-for (let i = 0; i < navItems.length; i += 1) {
-  navItems[i].addEventListener('click', function () {
-    const current = document.getElementsByClassName('active');
-    current[0].className = current[0]?.className?.replace(' active', '');
-    this.className += ' active';
-  });
 }
 
 
